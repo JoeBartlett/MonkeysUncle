@@ -57,7 +57,7 @@ let config = {
     postcss: [autoprefixer]
 };
 
-if (process.env.NODE_ENV === 'dev') {
+if (process.env.NODE_ENV == 'dev') {
     config.plugins = [
         new webpack.optimize.OccurenceOrderPlugin(),
         new webpack.ProvidePlugin({
@@ -78,7 +78,7 @@ if (process.env.NODE_ENV === 'dev') {
     ];
 }
 
-if (process.env.NODE_ENV === 'prod') {
+if (process.env.NODE_ENV == 'prod') {
     config.output.path = './dist';
     config.output.filename = 'js/bundle.js';
 
