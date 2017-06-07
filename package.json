@@ -2,7 +2,7 @@
   "name": "@trozzolo/gehatotal",
   "version": "1.0.0",
   "description": "Build for gehatotal.com",
-  "main": "app/base.js",
+  "main": "base.js",
   "directories": {
     "test": "test"
   },
@@ -13,7 +13,7 @@
     "build:static": "npm run build && npm run harp:compile && npm run pretty:html",
     "harp:server": "harp server --port 9876",
     "harp:compile": "harp compile",
-    "browser-sync:proxy": "browser-sync start --proxy 'localhost:9876' --files 'public/**/*.jade, public/**/*.json, public/build/*.js, public/build/*.css'",
+    "browser-sync:proxy": "browser-sync start --proxy 'localhost:9876' --files 'public/**/*.jade, public/**/*.json, public/build/js/*.js, public/build/css/*.css'",
     "browser-sync:static": "browser-sync start --server 'www' --files 'www/**/*.css, www/**/*.html'",
     "pretty:html": "find _app/public/www/ -name '*.html' -exec js-beautify --html -r {} +",
     "start": "npm run build:watch",
@@ -21,14 +21,16 @@
     "deploy:watch": "NODE_ENV=prod webpack --progress --watch"
   },
   "keywords": [
-    "wellness",
     "geha",
-    "keypath",
+    "total",
     "trozzolo"
   ],
   "author": "Trozzolo Communications Group",
   "license": "ISC",
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:JoeBartlett/GEHATotal.git"
+  },
   "devDependencies": {
     "apollo.js": "github:toddmotto/apollo",
     "autoprefixer": "^6.6.1",

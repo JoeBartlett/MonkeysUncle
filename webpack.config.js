@@ -9,8 +9,8 @@ let config = {
         vendor: ['jquery', 'riot']
     },
     output: {
-        path: './app/public',
-        filename: 'js/bundle.js'
+        path: './public/build',
+        filename: 'bundle.js'
     },
     devtool: 'inline-source-map',
     module: {
@@ -49,13 +49,8 @@ let config = {
             },
             {
                 test: /\.(png|jpg|gif|svg|woff|!ttf)$/,
-                loader: 'file-loader',
-                query: {
-                    limit: 1000,
-                    publicPath: './_img/based/',
-                    outputPath: './_img/based/'
-                },
-                exclude: /(node_modules)/
+                loader: 'url?limit=1000',
+                exclude: /node_modules/
             }
         ]
     },
@@ -101,7 +96,7 @@ if (process.env.NODE_ENV === 'prod') {
             filename: 'js/vendor.bundle.js'
         }),
         new ExtractTextPlugin('css/[name].css'),
-        // new webpack.optimize.UglifyJsPlugin(),
+        new webpack.optimize.UglifyJsPlugin(),
         new webpack.DefinePlugin({
             DEV: false,
             PROD: true
