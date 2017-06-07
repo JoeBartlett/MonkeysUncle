@@ -1,0 +1,182 @@
+/* Tab element */
+
+.r-tabs .r-tabs-nav .r-tabs-tab {
+  text-align: center;
+  padding-top: 7px;
+}
+
+.r-tabs-tab {
+  letter-spacing: 0.125rem;
+}
+
+.tabcnt-1 {
+  width: 100%;
+}
+
+.tabcnt-2 {
+  width: 49.8%;
+}
+
+.tabcnt-3 {
+  width: 33.1%;
+}
+
+.tabcnt-4 {
+  width: 24.76%;
+}
+
+.tabcnt-0, .tabcnt-5 {
+  width: 19.76%;
+}
+
+.r-tabs .r-tabs-nav .r-tabs-tab:last-child {
+  border-right: none;
+}
+
+.r-tab-1 {
+  background-color: #0090ba;
+}
+
+/* Why FDI 	  */
+
+.r-tab-2 {
+  background-color: #084e71;
+}
+
+/* Insurance  */
+
+.r-tab-3 {
+  background-color: #ef7622;
+}
+
+/* Retirement */
+
+.r-tab-4 {
+  background-color: #eaaa00;
+}
+
+/* Tax 		  */
+
+.r-tab-5 {
+  background-color: #b9bc54;
+}
+
+/* Asset 	  */
+
+.r-tabs-panel {
+  border-style: solid;
+  border-width: 7px 1px 1px 1px;
+}
+
+.r-panel-1 {
+  border-color: #0090ba;
+}
+
+.r-panel-2 {
+  border-color: #084e71;
+}
+
+.r-panel-3 {
+  border-color: #ef7622;
+}
+
+.r-panel-4 {
+  border-color: #eaaa00;
+}
+
+.r-panel-5 {
+  border-color: #b9bc54;
+}
+
+/* Tab anchor */
+
+.r-tabs .r-tabs-nav {
+  .r-tabs-anchor {
+    color: #fff;
+    display: inline-block;
+    height: 100%;
+    padding: 7px 5px;
+    text-decoration: none;
+    width: 100%;
+  }
+  .r-tabs-state-disabled {
+    opacity: 0.5;
+  }
+  .r-tabs-state-active .r-tabs-anchor {
+    color: #000;
+  }
+}
+
+/* Disabled tab */
+
+/* Active state tab anchor */
+
+/* Tab panel */
+
+ul.r-panel-wrap {
+  margin: 0;
+}
+
+.r-tabs {
+  .r-tabs-panel {
+    /*
+    background-color: white;
+    */
+  }
+  .r-tabs-accordion-title {
+    .r-tabs-anchor {
+      background-color: #00c5ad;
+      color: #fff;
+      display: block;
+      padding: 10px;
+      text-decoration: none;
+    }
+    &.r-tabs-state-active .r-tabs-anchor {
+      background-color: #fff;
+      color: #00c5ad;
+      text-shadow: none;
+    }
+    &.r-tabs-state-disabled {
+      opacity: 0.5;
+    }
+  }
+  .r-tabs-nav {
+    height: 3rem;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+  .r-tabs-tab {
+    border-right: 3px solid #fff;
+    list-style: none;
+    vertical-align: middle;
+  }
+  .r-tabs-panel {
+    padding: 15px;
+    display: none;
+  }
+  .r-tabs-accordion-title {
+    display: none;
+  }
+  .r-tabs-panel.r-tabs-state-active {
+    display: block;
+  }
+}
+
+/* Accordion anchor */
+
+/* Active accordion anchor */
+
+/* Disabled accordion button */
+
+/* Accordion responsive breakpoint */
+@media only screen and (max-width: 768px) {
+  .r-tabs {
+    .r-tabs-nav {
+      display: none;
+    }
+    .r-tabs-accordion-title {
+      display: block;
+    }
+  }
+}

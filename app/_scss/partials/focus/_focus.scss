@@ -1,0 +1,25 @@
+@import "../../includes/includes";
+
+.focus {
+  &__select-box {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  &__button {
+    padding-left: 10px;
+  }
+
+  &__hero {
+    h1 {
+      display: none;
+    }
+    .hero__image {
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+
+}

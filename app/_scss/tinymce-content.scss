@@ -1,0 +1,224 @@
+/* Developed 2014.10.01 by: ============
+// 	Trozzolo Communications Group
+// 	811 Wyandotte, Kansas City, MO 64105
+// 	816.842.8111 | trozzolo.com
+
+* { margin: 0 auto; padding: 0;	}
+img { border: none;	}
+td, tr { border: none; }
+a { text-decoration: none; }
+
+/*- GENERAL -------------------------*/
+
+.clearfix {
+  &:before {
+    content: "";
+    display: table;
+    line-height: 0;
+  }
+  &:after {
+    content: "";
+    display: table;
+    line-height: 0;
+    clear: both;
+  }
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: 'Calibri W01 Light', Verdana, sans-serif;
+  height: 100%;
+  margin: 0;
+  padding: 0 10px;
+  position: absolute;
+  width: 100%;
+}
+
+html {
+  font-size: 16px;
+  /* sets root font size */
+}
+
+header {
+  font-size: 1.25rem;
+  /* 50px */
+}
+
+nav, article, section {
+  font-size: .90rem;
+}
+
+footer {
+  font-size: .85rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.33;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.33;
+}
+
+p {
+  font-size: .9rem;
+  font-weight: 300;
+  line-height: 1.33;
+}
+
+.bold {
+  font-weight: 900;
+}
+
+a {
+  color: #e47a3c;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+ul, ol {
+  line-height: 1.3rem;
+  margin: 0 0 1.3rem 1rem;
+  padding: 0;
+}
+
+ul {
+  list-style-type: disc;
+  li {
+    font-weight: 300;
+  }
+}
+
+ol li {
+  font-weight: 300;
+}
+
+.img-left {
+  float: left;
+}
+
+.img-right {
+  float: right;
+}
+
+/* styles to allow tinyMCE tags to work */
+
+.bold {
+  font-weight: bold;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.strike {
+  text-decoration: line-through;
+}
+
+.right {
+  text-align: right;
+}
+
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.full {
+  text-align: justify;
+}
+
+sub {
+  font-size: smaller;
+  vertical-align: sub;
+}
+
+sup {
+  font-size: smaller;
+  vertical-align: super;
+}
+
+/*--- blockquotes --------- */
+
+blockquote {
+  color: #383838;
+  font-family: Georgia, serif;
+  font-size: 1.2rem;
+  font-style: italic;
+  line-height: 1.45;
+  margin: 0.25em 0;
+  padding: 0.25em 40px;
+  position: relative;
+  &:before {
+    color: #7a7a7a;
+    content: "\201C";
+    display: block;
+    font-size: 5rem;
+    left: -1.25rem;
+    position: absolute;
+    top: -1.25rem;
+  }
+  cite {
+    color: #999999;
+    display: block;
+    font-size: .875rem;
+    margin-top: .3125rem;
+    &:before {
+      content: "\2014 \2009";
+    }
+  }
+}
+
+/*-- tinyMCE-tables -------------------*/
+
+.table-blue {
+  background-color: #009dbd;
+  color: #fff;
+}
+
+.table-purple {
+  background-color: #71378a;
+  color: #fff;
+}
+
+.border-all {
+  border: 1px solid #77787b;
+}
+
+.border-top {
+  border-top: 1px solid #77787b;
+}
+
+.border-left {
+  border-left: 1px solid #77787b;
+}
+
+.border-right {
+  border-right: 1px solid #77787b;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #77787b;
+}

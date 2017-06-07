@@ -1,0 +1,63 @@
+@import "../../../includes/includes";
+
+.pod {
+  &__container {
+    display: flex;
+  }
+  &__column {}
+
+  .heading {
+    font-size: 16px;
+    text-transform: uppercase;
+    border-bottom: 1px solid;
+    margin-bottom: 10px;
+    display: inline-block;
+  }
+
+  .image {
+    img {
+      max-width: 100%;
+    }
+    i {
+      font-size: 60px;
+    }
+  }
+  .title {
+    font-size: 30px;
+    line-height: 30px;
+    margin-bottom: 10px;
+  }
+  .copy {}
+  .source {
+    font-size: 10px;
+  }
+
+  .link {
+    padding-top: 15px;
+
+  }
+
+  &.recipe {
+    color: $teal;
+    a {
+      color: $teal;
+    }
+    background-color: #e6eff5;
+
+  }
+  &.ebook {
+    color: $orange;
+    a {
+      color: $orange;
+    }
+    background-color: #fdefe1;
+
+  }
+  &.essentials {
+    color: $purple;
+    a {
+      color: $purple;
+    }
+    background-color: #f8f6fa;
+  }
+}

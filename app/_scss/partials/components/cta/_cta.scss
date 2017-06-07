@@ -1,0 +1,19 @@
+a {
+  &.cta {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    text-decoration: none;
+    color: inherit;
+
+    .text {
+      text-transform: uppercase;
+    }
+
+    i {
+      font-size: inherit;
+      padding-left: 10px;
+    }
+
+  }
+}

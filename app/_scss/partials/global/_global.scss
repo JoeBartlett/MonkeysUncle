@@ -1,0 +1,6 @@
+@import "../../includes/includes";
+
+body {
+  @include page-colors();
+
+}

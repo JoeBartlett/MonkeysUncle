@@ -1,0 +1,367 @@
+$base_item_class: item;
+$base_tile_class: tile;
+$base-font: 16;
+$base-color: #666;
+$break_point: 720;
+$confine-width: ($break_point * 2);
+$overlay-max-width: 1300;
+$break_point-medium: ($break_point * 1.5);
+$break_point-xs: ($break_point * .6);
+$nav-height-large: 120;
+$nav-height-small: 80;
+
+
+// adds px to number string
+@function px($pixels) {
+  @if ($pixels == 0) {
+    @return $pixels;
+  } @else {
+    @return $pixels + px;
+  }
+}
+
+// figures rem v base font size (default is 16)
+@function rem-calc($pixels) {
+  @if ($pixels == 0) {
+    @return $pixels;
+  } @else {
+    @return $pixels / $base-font + rem;
+  }
+}
+
+// figures em v base font size (default is 16)
+@function em-calc($pixels) {
+  @if ($pixels == 0) {
+    @return $pixels;
+  } @else {
+    @return $pixels / $base-font + em;
+  }
+}
+
+// figures %/vw/vh v desired media width
+// usage --  font-size: size-calc(18,'vw',$tablet);
+@function size-calc($pixels, $unit, $container-size) {
+  @if ($pixels == 0) {
+    @return $pixels;
+  } @else if $unit == '%' {
+    @return (($pixels / $container-size) * 100%);
+  } @else if $unit == 'vw' {
+    @return (($pixels / $container-size) * 100vw);
+  } @else if $unit == 'vh' {
+    @return (($pixels / $container-size) * 100vh);
+  }
+}
+
+// Breakpoint and Media Mixins
+
+@mixin x-small {
+  @media screen and (max-width: #{$break_point-xs+0px}) {
+    @content;
+  }
+}
+
+@mixin small {
+  @media screen and (max-width: #{$break_point+0px}) {
+    @content;
+  }
+}
+
+@mixin landscape {
+  @media screen and (max-width: #{$break_point+0px}) and (orientation: landscape) {
+    @content;
+  }
+}
+
+@mixin medium {
+  @media screen and (min-width: #{$break_point+1px}) and (max-width: #{$break_point-medium+0px}) {
+    @content;
+  }
+}
+
+@mixin large {
+  @media screen and (min-width: #{$break_point+1px}) {
+    @content;
+  }
+}
+
+@mixin x-large {
+  @media screen and (min-width: #{$confine-width+0px}) {
+    @content;
+  }
+}
+
+@mixin confine-width {
+  @media screen and (min-width: #{$confine-width+1px}) {
+    @content;
+  }
+}
+
+@mixin overlay-max {
+  @media screen and (min-width: #{$overlay-max-width+0px}) {
+    @content;
+  }
+}
+
+// Functional Mixins
+
+@mixin font-sizer($size: $base-font,$size2: $size,$size3: $size2) {
+  font-size: #{($size/$base-font)+rem};
+  @include large {
+    font-size: size-calc($size2, 'vw', $confine-width);
+  }
+  @include confine-width {
+    font-size: #{($size3/$base-font)+rem};
+  }
+}
+
+@mixin font-vw($size: $base-font,$size2: $size,$size3: $size2) {
+  @if ($size2 == $size) {
+    $size: $size * 2;
+  }
+
+  font-size: size-calc($size, 'vw', $break_point);
+  @include large {
+    font-size: size-calc($size2, 'vw', $confine-width);
+  }
+  @include confine-width {
+    font-size: #{($size3/$base-font)+rem};
+  }
+}
+
+@mixin vw-calc($prop, $size: null, $size2: null, $size3: null, $size4: null, $size5: null, $size6: null,  $size7: null, $size8: null) {
+  @if ($prop == padding) or ($prop == margin) {
+    @if $size == null {
+      #{$prop}: 0;
+    } @else if ($size != null) and ($size2 == null) {
+      #{$prop}: size-calc($size, 'vw', $break_point);
+
+      @if ($size5 == null) {
+        @include confine-width {
+          #{$prop}: px(#{$size * 2});
+        }
+      }
+
+    } @else if ($size2 != null) and ($size3 == null) {
+      #{$prop}: size-calc($size, 'vw', $break_point) size-calc($size2, 'vw', $break_point);
+
+      @if ($size5 == null) {
+        @include confine-width {
+          #{$prop}: px(#{$size * 2}) px(#{$size2 * 2});
+        }
+      }
+
+    } @else if ($size3 != null) and ($size4 == null) {
+      #{$prop}: size-calc($size, 'vw', $break_point) size-calc($size2, 'vw', $break_point) size-calc($size3, 'vw', $break_point);
+
+      @if ($size5 == null) {
+        @include confine-width {
+          #{$prop}: px(#{$size * 2}) px(#{$size2 * 2}) px(#{$size3 * 2});
+        }
+      }
+
+    } @else if ($size4 != null) {
+      #{$prop}: size-calc($size, 'vw', $break_point) size-calc($size2, 'vw', $break_point) size-calc($size3, 'vw', $break_point) size-calc($size4, 'vw', $break_point);
+
+      @if ($size5 == null) {
+        @include confine-width {
+          #{$prop}: px(#{$size * 2}) px(#{$size2 * 2}) px(#{$size3 * 2}) px(#{$size4 * 2});
+        }
+      }
+
+    }
+
+    @if ($size5 != null) and ($size6 == null) {
+      @include large {
+        #{$prop}: size-calc($size5, 'vw', $confine-width);
+      }
+      @include confine-width {
+        #{$prop}: px(#{$size5});
+      }
+    } @else if ($size6 != null) and ($size7 == null) {
+      @include large {
+        #{$prop}: size-calc($size5, 'vw', $confine-width) size-calc($size6, 'vw', $confine-width);
+      }
+      @include confine-width {
+        #{$prop}: px(#{$size5}) px(#{$size6});
+      }
+    } @else if ($size7 != null) and ($size8 == null) {
+      @include large {
+        #{$prop}: size-calc($size5, 'vw', $confine-width) size-calc($size6, 'vw', $confine-width) size-calc($size7, 'vw', $confine-width);
+      }
+      @include confine-width {
+        #{$prop}: px(#{$size5}) px(#{$size6}) px(#{$size7});
+      }
+    } @else if ($size8 != null) {
+      @include large {
+        #{$prop}: size-calc($size5, 'vw', $confine-width) size-calc($size6, 'vw', $confine-width) size-calc($size7, 'vw', $confine-width) size-calc($size8, 'vw', $confine-width);
+      }
+      @include confine-width {
+        #{$prop}: px(#{$size5}) px(#{$size6}) px(#{$size7}) px(#{$size8});
+      }
+    }
+  } @else {
+    @if ($size != null) and ($size2 == null) {
+      #{$prop}: size-calc($size, 'vw', $break_point);
+      @include large {
+        #{$prop}: size-calc($size, 'vw', $confine-width);
+      }
+      @include confine-width {
+        #{$prop}: px($size);
+      }
+    } @else if ($size2 != null) {
+      #{$prop}: size-calc($size, 'vw', $break_point);
+      @include large {
+        #{$prop}: size-calc($size2, 'vw', $confine-width);
+      }
+      @include confine-width {
+        #{$prop}: px($size2);
+      }
+    }
+  }
+}
+
+@mixin embed-resize($width: 560,$height: 340,$haspadding: true) {
+  $ratio: ($height / $width);
+  $max-width: size-calc($break_point, 'vw', $break_point);
+
+  @if ($haspadding == true) {
+    $max-width: ($max-width - size-calc(80,'vw',$break_point));
+  }
+
+  @include small {
+    max-width: $max-width;
+    max-height: ($max-width * $ratio);
+  }
+}
+
+@mixin item-count($count) {
+  &:first-child:nth-last-child(#{$count}),
+  &:first-child:nth-last-child(#{$count}) ~ & {
+    @content;
+  }
+}
+
+@mixin calc-it($prop,$first:null,$second:null,$third:null,$forth:null) {
+  @if $first == null {
+    #{$prop}: 0;
+  } @else if ($first != null and $second == null) or ($first != null and $second == $first and $third == null and $forth == null) or ($first != null and $second == $first and $third == $first and $forth == null) or ($first != null and $second == $first and $third == $first and $forth == $first ) {
+    #{$prop}: em-calc($first);
+  } @else if ($second != null and $second != $first and $third == null) or ($second != null and $second != $first and $third == $first and $forth == $second) {
+    #{$prop}: em-calc($first) em-calc($second);
+  } @else if ($third != null and $third != $first and $forth == null) or ($third != null and $third != $first and $forth == $second) {
+    #{$prop}: em-calc($first) em-calc($second) em-calc($third);
+  } @else if ($forth != null and $third != $first and $forth != $second) {
+    #{$prop}: em-calc($first) em-calc($second) em-calc($third) em-calc($forth);
+  }
+}
+
+@mixin confined {
+  @include confine-width {
+    max-width: px($confine-width);
+    margin: 0 auto;
+    position: relative;
+    @content;
+  }
+}
+
+@mixin widify($first: 1,$second: $first) {
+  width: calc((100% / #{$second}) * #{$first});
+}
+
+@mixin display-switch {
+  &.show {
+    &-large {
+
+      display: none;
+      @include large {
+        display: block;
+      }
+    }
+    &-small {
+      display: block;
+      @include large {
+        display: none;
+      }
+    }
+  }
+}
+
+%nav-height-large-full {
+  @include large {
+    height: calc(100vh - #{px($nav-height-large)});
+  }
+}
+
+%nav-height-large-full-min {
+  @include large {
+    min-height: calc(100vh - #{px($nav-height-large)});
+  }
+}
+
+%nav-height-large-half {
+  @include large {
+    height: #{(100vh - #{px($nav-height-large)}) / 2};
+  }
+}
+
+%nav-height-large-half-min {
+  @include large {
+    min-height: #{(100vh - #{px($nav-height-large)}) / 2};
+  }
+}
+
+%nav-height-small-full {
+  @include small {
+    height: calc(100vh - #{px($nav-height-small)});
+    &.tile__hero {
+      height: calc(100vh);
+    }
+  }
+  @include landscape {
+    height: unset;
+  }
+}
+
+%nav-height-small-full-min {
+  @include small {
+    min-height: calc(100vh - #{px($nav-height-small)});
+    &.tile__hero {
+      min-height: calc(100vh);
+    }
+  }
+  @include landscape {
+    min-height: unset;
+  }
+}
+
+%nav-height-small-half {
+  @include small {
+    min-height: calc((100vh - #{px($nav-height-small)}) / 2);
+    &.tile__hero {
+      height: calc(100vh / 2);
+    }
+  }
+  @include landscape {
+    height: unset;
+  }
+}
+
+%nav-height-small-half-min {
+  @include small {
+    min-height: calc((100vh - #{px($nav-height-small)}) / 2);
+    &.tile__hero {
+      min-height: calc(100vh / 2);
+    }
+  }
+  @include landscape {
+    min-height: unset;
+  }
+}
+
+@mixin view-height($screensize, $fullhalf, $min:null) {
+  @if $min != null {
+    $min: -min;
+  }
+  @extend %nav-height-#{$screensize}-#{$fullhalf}#{$min};
+}
+

@@ -1,0 +1,30 @@
+$white: #FFF;
+
+
+$purple: #542F90;
+$teal: #118CAF;
+$orange: #EE7822;
+$background: #ee7822;
+
+$page-colors: ('teal', $teal, 60%), ('purple', $purple, 60%), ('orange', $orange, 40%);
+
+
+@mixin page-colors() {
+  @each $i in $page-colors {
+    $hex: nth($i,2);
+    $percent: nth($i,3);
+    &.#{nth($i,1)} {
+      background: lighten($hex, $percent);
+      color: nth($i,2);
+      .st0 {
+        fill: nth($i,2);
+      }
+
+      a {
+        color: nth($i,2);
+      }
+      @content
+    }
+  }
+}
+

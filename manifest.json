@@ -1,0 +1,8 @@
+{
+  "app.css": "_css/app.css",
+  "app.css.map": "_css/app.css.map",
+  "app.js": "_js/bundle.js",
+  "app.js.map": "_js/bundle.js.map",
+  "vendor.js": "_js/vendor.bundle.js",
+  "vendor.js.map": "_js/vendor.bundle.js.map"
+}

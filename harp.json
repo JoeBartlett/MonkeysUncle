@@ -1,0 +1,14 @@
+{
+  "globals": {
+    "main_menu": false,
+    "title": "GEHA",
+    "path": "/index.html",
+    "cover_path": "",
+    "cover_path_mobile": "",
+    "cover": "",
+    "headline": "",
+    "subhead": "",
+    "overview": "",
+    "favicon": ""
+  }
+}
