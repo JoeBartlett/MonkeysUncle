@@ -1,0 +1,63 @@
+{
+  "menu":[
+    {
+      "name": "Products",
+      "links": [
+        {
+          "title": "Life Insurance",
+          "path": "#"
+        },
+        {
+          "title": "Short Term Income Protection",
+          "path": "#"
+        },
+        {
+          "title": "Accident Expense Protection",
+          "path": "#"
+        },
+        {
+          "title": "Build My Plan",
+          "path": "#"
+        }
+      ]
+    },
+    {
+      "name": "Insurance 101",
+      "links": [
+        {
+          "title": "Insurance Basics",
+          "path": "#"
+        },
+        {
+          "title": "Insurance FAQs",
+          "path": "#"
+        },
+        {
+          "title": "Insurance Lingo",
+          "path": "#"
+        },
+        {
+          "title": "Help",
+          "path": "#"
+        }
+      ]
+    },
+    {
+      "name": "About Us",
+      "links": [
+        {
+          "title": "The GEHAtotal Difference",
+          "path": "#"
+        },
+        {
+          "title": "Contact Us",
+          "path": "#"
+        },
+        {
+          "title": "Privacy Policy",
+          "path": "#"
+        }
+      ]
+    }
+  ]
+}

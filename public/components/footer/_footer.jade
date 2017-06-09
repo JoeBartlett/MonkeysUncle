@@ -1,0 +1,8 @@
+footer#footer.row
+    .footer__menu
+        for item in public.components.footer._data.menu
+            ul #{item.name}
+                for link in item.links
+                    li
+                        a(href="#{link.path}") #{link.title}
+

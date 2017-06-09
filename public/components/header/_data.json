@@ -1,0 +1,26 @@
+{
+  "menu": [
+    {
+      "title": "Products",
+      "path": "#"
+    },
+    {
+      "title": "Insurance 101",
+      "path": "#"
+    },
+    {
+      "title": "About Us",
+      "path": "#"
+    },
+    {
+      "title": "Get a Quote",
+      "path": "#",
+      "class": "menu__quote"
+    },
+    {
+      "title": "Login",
+      "path": "#",
+      "class": "menu__login"
+    }
+  ]
+}

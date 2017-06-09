@@ -6,11 +6,11 @@ let autoprefixer = require('autoprefixer');
 let config = {
     entry: {
         app: './app/base.js',
-        vendor: ['jquery', 'riot']
+        vendor: ['jquery', 'riot', 'bootstrap']
     },
     output: {
-        path: './public/build',
-        filename: 'bundle.js'
+        path: './public',
+        filename: 'js/bundle.js'
     },
     devtool: 'inline-source-map',
     module: {
@@ -79,7 +79,7 @@ if (process.env.NODE_ENV == 'dev') {
 }
 
 if (process.env.NODE_ENV == 'prod') {
-    config.output.path = './dist';
+    config.output.path = '.';
     config.output.filename = 'js/bundle.js';
 
     config.devtool = 'source-map';

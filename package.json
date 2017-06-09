@@ -9,22 +9,16 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "NODE_ENV=dev webpack --colors --progress",
-    "build:local": "NODE_ENV=local webpack --colors --progress --watch",
     "build:watch": "NODE_ENV=dev webpack --colors --progress --watch",
     "build:static": "npm run build && npm run harp:compile && npm run pretty:html",
     "harp:server": "harp server --port 9876",
     "harp:compile": "harp compile",
-    "browser-sync:proxy": "browser-sync start --proxy 'localhost:9876' --files 'public/**/*.jade, public/**/*.json, public/build/js/*.js, public/build/css/*.css'",
+    "browser-sync:proxy": "browser-sync start --proxy 'localhost:9876' --files 'public/**/*.jade, public/**/*.json, public/js/*.js, public/css/*.css'",
     "browser-sync:static": "browser-sync start --server 'www' --files 'www/**/*.css, www/**/*.html'",
     "pretty:html": "find www/ -name '*.html' -exec js-beautify --html -r {} +",
-    "start": "npm run build:watch & npm run build:local & npm run harp:server & npm run browser-sync:proxy",
+    "start": "npm run build:watch & npm run harp:server & npm run browser-sync:proxy",
     "deploy": "NODE_ENV=prod webpack --progress",
-    "deploy:watch": "NODE_ENV=prod webpack --progress --watch",
-    "desegment": "find node_modules/ -name '*.info' -type f -delete",
-    "postinstall": "npm run desegment",
-    "post-package-update": "npm run desegment",
-    "update:plus": "npm update && npm run desegment",
-    "ProductionBuild": "npm run build && npm run build:static && npm run deploy"
+    "deploy:watch": "NODE_ENV=prod webpack --progress --watch"
   },
   "keywords": [
     "geha",
@@ -73,8 +67,5 @@
     "webpack": "^1.14.0",
     "webpack-dev-server": "^1.16.2",
     "webpack-manifest-plugin": "^1.1.0"
-  },
-  "dependencies": {
-    "node-gyp": "^3.6.2"
   }
 }
