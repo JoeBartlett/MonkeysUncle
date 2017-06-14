@@ -1,5 +1,9 @@
 @import "../../includes/includes";
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   @include page-colors();
   font-family: "Avenir",Helvetica,Arial,sans-serif;
