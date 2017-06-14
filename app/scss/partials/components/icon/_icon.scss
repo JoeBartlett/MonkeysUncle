@@ -1,7 +1,33 @@
 @import "../../../includes/includes";
 
-$icons: 'insurance', 'bandaid', '';
+$icons: ('insurance', $blue-green), ('bandaid', $green), ('dollar', $orange), ('keypath', $transparent), ('calculator', $transparent);
+@mixin iconify() {
+  @each $i in $icons {
+    &.icon__#{nth($i,1)} {
+      background-image: url('../../../../img/#{nth($i,1)}_icon.svg');
+      background-color: #{nth($i,2)};
+    }
+  }
+}
 
 .icon {
-  &__
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+
+  &__circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-size: 50%;
+  }
+  &__square {
+    width: 100px;
+    height: 100px;
+    border-radius: 0%;
+  }
+  @include iconify;
+
+
 }

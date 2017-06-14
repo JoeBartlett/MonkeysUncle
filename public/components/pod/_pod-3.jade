@@ -2,9 +2,9 @@
 
 .pod__container.row.pod-3
     for item in pod3
-        .pod__item(class="#{item.class}")
-            .pod__icon(class="icon__#{item.icon}")
-            .pod__content
+        .pod__item.column
+            i.pod__icon(class="#{item.class} icon__#{item.icon}")
+            .pod__content.column
                 .title #{item.title}
                 .copy #{item.copy}
                 .link

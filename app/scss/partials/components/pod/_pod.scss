@@ -2,11 +2,9 @@
 
 .pod {
   &__container {
-    display: flex;
   }
-  &__column {}
 
-  .image {
+  &__icon {
     img {
       max-width: 100%;
     }
@@ -14,25 +12,55 @@
       font-size: 60px;
     }
   }
-  .title {
-    @include font-sizer(30);
-    line-height: 30px;
-    margin-bottom: 10px;
-  }
-  .copy {}
-  .source {
-    font-size: 10px;
+
+  &__item {
+    @include vw-calc(padding, 10);
+    align-items: center;
+    .pod-3 & {
+      @include vw-calc(margin, 10);
+      border-width: 1px;
+      border-style: solid;
+      .purple & {
+        border-color: $purple;
+      }
+      text-align: center;
+
+    }
+    .pod-2 & {
+      border-top: solid 1px $gray-2;
+      &:nth-child(even) {
+        background-color: $gray-2;
+      }
+
+      .pod__content {
+        @include vw-calc(padding, 0, 0, 0, 10)
+      }
+    }
+
+    .title {
+      @include font-sizer(24,30);
+      line-height: 30px;
+      margin-bottom: 10px;
+    }
+    .copy {}
+
+    .link {
+      display: block;
+      width: 100%;
+      padding-top: 15px;
+      a {
+        display: block;
+        text-align: center;
+        @include vw-calc(padding, 5, 10);
+        border-style: solid;
+        border-width: 1px;
+        border-radius: 3px;
+        border-color: inherit;
+
+      }
+
+    }
   }
 
-  .link {
-    padding-top: 15px;
 
-  }
-  &3 {
-
-  }
-
-  &2 {
-    border-top: solid 1px $gray-2;
-  }
 }

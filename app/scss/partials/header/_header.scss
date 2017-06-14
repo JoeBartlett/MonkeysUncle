@@ -22,12 +22,16 @@ header {
     a {
       @include vw-calc(padding, 5, 5, 5, 5, 5, 10);
       @include vw-calc(margin, 5, 5, 5, 5, 5);
+      &:hover {
+        text-decoration: underline;
+      }
 
     }
   }
-  &__quote {
+  &__login {
     border-style: solid;
     border-width: 1px;
+    border-radius: 3px;
     .purple & {
       border-color: $purple;
       &:hover {
@@ -36,9 +40,10 @@ header {
       }
     }
   }
-  &__login {
+  &__quote {
     border-style: solid;
     border-width: 1px;
+    border-radius: 3px;
     .purple & {
       border-color: $purple;
       background-color: $purple;

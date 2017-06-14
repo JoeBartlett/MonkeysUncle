@@ -24,16 +24,26 @@
       width: 80%;
     }
     &-title {
-      @include font-sizer(18,24);
+      @include font-sizer(20,26);
     }
     &-item {
       a {
         @include vw-calc(padding, 5, 0);
         @include vw-calc(margin, 0);
+        &:hover {
+          text-decoration: underline;
+        }
+        &::before {
+          content: ' ';
+          text-decoration-style: dotted;
+        }
       }
     }
   }
   &__copyright {
     @include vw-calc(padding, 20);
+  }
+  &__logo {
+    padding-bottom: 10px;
   }
 }

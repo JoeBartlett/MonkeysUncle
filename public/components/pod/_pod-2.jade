@@ -2,8 +2,8 @@
 
 .pod__container.row.pod-2
     for item in pod2
-        .pod__item(class="#{item.class}")
-            .pod__icon(class="icon__#{item.icon}")
+        .pod__item.row
+            i.pod__icon(class="#{item.class} icon__#{item.icon}")
             .pod__content
                 .title #{item.title}
                 .copy #{item.copy}

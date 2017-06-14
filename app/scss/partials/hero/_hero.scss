@@ -9,14 +9,17 @@
     background-size: cover;
     color: $white;
     justify-content: flex-end;
-
   }
   &__body {
     width: 50%;
+    min-height: 450px;
+    justify-content: center;
 
     .title {
-      @include font-sizer(30);
+      @include font-sizer(48, 60);
     }
-    .copy {}
+    .copy {
+      @include font-sizer(18, 24);
+    }
   }
 }

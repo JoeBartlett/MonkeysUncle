@@ -10,7 +10,6 @@ footer#footer.row
                         a(href="#{link.path}") #{link.title}
 
     .footer__copyright
-        img(src="#{footer.copyright.logo}")
+        img.footer__logo(src="#{footer.copyright.logo}")
         p &copy; #{footer.copyright.year}, #{footer.copyright.company}
-        p #{footer.copyright.rights}
-        p #{footer.copyright.phone}
+        p #{footer.copyright.rights} #{footer.copyright.phone}
