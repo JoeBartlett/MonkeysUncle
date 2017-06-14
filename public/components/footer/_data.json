@@ -59,5 +59,12 @@
         }
       ]
     }
-  ]
+  ],
+  "copyright": {
+    "logo": "img/GEHATotal_logo-white.svg",
+    "year": "2017",
+    "company": "Government Employees Health Association, Inc.",
+    "rights": "All rights reserved.",
+    "phone": "1.844.937.4342"
+  }
 }

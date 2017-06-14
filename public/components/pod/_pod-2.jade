@@ -1,0 +1,11 @@
+-var pod2 = public.components.pod._data.pod_2
+
+.pod__container.row.pod-2
+    for item in pod2
+        .pod__item(class="#{item.class}")
+            .pod__icon(class="icon__#{item.icon}")
+            .pod__content
+                .title #{item.title}
+                .copy #{item.copy}
+                .link
+                    a(href="#{item.link.path}") #{item.link.text}

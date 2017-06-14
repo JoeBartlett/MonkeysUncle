@@ -2,5 +2,16 @@
 
 body {
   @include page-colors();
+  font-family: "Avenir",Helvetica,Arial,sans-serif;
+  @include font-sizer($base-font);
 
+}
+
+.row {
+  display: flex;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }

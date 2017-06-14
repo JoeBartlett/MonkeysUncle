@@ -8,6 +8,7 @@ $black: #000;
 
 $purple: #500778;
 $teal: #008AAB;
+$teal-light: #009dbb;
 $blue-green: #6BCABA;
 $orange: #FFAD00;
 $green: #78D64B;
@@ -21,7 +22,7 @@ $page-colors: ('teal', $teal, 60%), ('purple', $purple, 60%), ('orange', $orange
     $hex: nth($i,2);
     $percent: nth($i,3);
     &.#{nth($i,1)} {
-      background: lighten($hex, $percent);
+      // background: lighten($hex, $percent);
       color: nth($i,2);
       .st0 {
         fill: nth($i,2);

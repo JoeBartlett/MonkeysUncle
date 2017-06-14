@@ -1,0 +1,12 @@
+-var hero = public.components.hero._data.heroes
+
+.hero__container.row
+    each item in hero
+        .hero__content.row(style="background-image: url('#{item.image}')")
+            .hero__body(class=item.link.type)
+                .title #{item.title}
+                .copy #{item.copy}
+                if item.link.type == 'video'
+                    a.btn.play(href="#{item.link.path}")
+                else
+                    a.btn(href="#{item.link.path}") #{item.link.text}

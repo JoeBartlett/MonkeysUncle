@@ -1,0 +1,56 @@
+{
+  "pod_3": [
+    {
+      "class": "pod__1-3",
+      "icon": "insurance",
+      "title": "Term Life Insurance",
+      "copy": "GEHAtotal Life Insurance gives you the confidence to let life happen.",
+      "link": {
+        "text": "Get the details",
+        "path": "#"
+      }
+    },
+    {
+      "class": "pod__1-3",
+      "icon": "dollar",
+      "title": "Short-Term Income Protection",
+      "copy": "Helps you pay the bills -- earn a paycheck with an illness or an injury.",
+      "link": {
+        "text": "Get the details",
+        "path": "#"
+      }
+    },
+    {
+      "class": "pod__1-3",
+      "icon": "bandaid",
+      "title": "Accident Expense Protection",
+      "copy": "Make sure a physical setback doesn’t become a financial setback.",
+      "link": {
+        "text": "Get the details",
+        "path": "#"
+      }
+    }
+  ],
+  "pod_2": [
+    {
+      "class": "pod__1-2",
+      "icon": "calculator",
+      "title": "Calculate Your Needs",
+      "copy": "Discover your insurance needs, receive a quote and purchase insurance in minutes. ",
+      "link": {
+        "text": "Let’s begin",
+        "path": "#"
+      }
+    },
+    {
+      "class": "pod__1-2",
+      "icon": "keypath",
+      "title": "About GEHAtotal",
+      "copy": "GEHA has been improving the lives of Federal Employees for 80 years.",
+      "link": {
+        "text": "Get to know GEHA",
+        "path": "#"
+      }
+    }
+  ]
+}

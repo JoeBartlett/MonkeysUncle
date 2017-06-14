@@ -1,3 +1,11 @@
 {
-  "logo": "../app/img/GEHATotal_logo.svg"
+  "index":{
+    "title": "GEHA Index",
+    "path": "",
+    "body_class": [],
+    "head_img": "",
+    "headline": "",
+    "body": "",
+    "logo": "img/GEHATotal_logo.svg"
+  }
 }

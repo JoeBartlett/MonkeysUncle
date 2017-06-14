@@ -1,0 +1,39 @@
+@import "../../includes/includes";
+
+#footer {
+  color: $white;
+  align-items: stretch;
+  justify-content: space-between;
+  flex-direction: column;
+  background-color: $teal;
+  @include large {
+    flex-direction: row;
+  }
+
+  a {
+    color: $white;
+  }
+}
+
+.footer {
+  &__menu {
+    justify-content: space-between;
+    background-color: $teal-light;
+    @include vw-calc(padding, 20);
+    @include large {
+      width: 80%;
+    }
+    &-title {
+      @include font-sizer(18,24);
+    }
+    &-item {
+      a {
+        @include vw-calc(padding, 5, 0);
+        @include vw-calc(margin, 0);
+      }
+    }
+  }
+  &__copyright {
+    @include vw-calc(padding, 20);
+  }
+}

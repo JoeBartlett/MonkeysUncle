@@ -1,0 +1,49 @@
+@import "../../includes/includes";
+
+header {
+  padding: 15px 0;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  @include large {
+    flex-direction: row;
+  }
+}
+
+.header {
+  &__menu {
+    justify-content: space-between;
+    @include font-sizer(18,24);
+  }
+}
+
+.menu {
+  &__item {
+    a {
+      @include vw-calc(padding, 5, 5, 5, 5, 5, 10);
+      @include vw-calc(margin, 5, 5, 5, 5, 5);
+
+    }
+  }
+  &__quote {
+    border-style: solid;
+    border-width: 1px;
+    .purple & {
+      border-color: $purple;
+      &:hover {
+        color: $white;
+        background-color: $purple;
+      }
+    }
+  }
+  &__login {
+    border-style: solid;
+    border-width: 1px;
+    .purple & {
+      border-color: $purple;
+      background-color: $purple;
+      color: $white;
+
+    }
+  }
+}

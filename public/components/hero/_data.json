@@ -1,0 +1,14 @@
+{
+  "heroes": [
+    {
+      "image": "img/GEHATotal_hero.png",
+      "title": "Life. You got this.",
+      "copy": "Immediate Insurance Coverage. No medical exam.<br>Sign up entirely online in less than 20 minutes.<br>Designed exclusively for federal employees by GEHA.",
+      "link": {
+        "type": "video",
+        "text": "Read more",
+        "path": "https://player.vimeo.com/video/141101545/config/request?session=16cb0eca786…04&signature=d84f856e52854ec0fc822405eff4158a&time=1497025275&expires=3600"
+      }
+    }
+  ]
+}
