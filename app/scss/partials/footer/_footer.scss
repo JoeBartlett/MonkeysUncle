@@ -21,6 +21,7 @@
     background-color: $teal-light;
     @include vw-calc(padding, 20);
     @include large {
+      display: flex;
       width: 80%;
     }
     &-title {

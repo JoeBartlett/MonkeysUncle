@@ -59,4 +59,9 @@
       }
     }
   }
+  &-2, &-3 {
+    @include large {
+      display: flex;
+    }
+  }
 }
