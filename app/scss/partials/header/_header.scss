@@ -14,6 +14,7 @@ header {
   &__menu {
     justify-content: space-between;
     @include font-sizer(18,24);
+    width: 50%;
   }
 }
 
@@ -22,9 +23,6 @@ header {
     a {
       @include vw-calc(padding, 5, 5, 5, 5, 5, 10);
       @include vw-calc(margin, 5, 5, 5, 5, 5);
-      &:hover {
-        text-decoration: underline;
-      }
 
     }
   }

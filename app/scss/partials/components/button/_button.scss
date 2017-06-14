@@ -14,8 +14,11 @@
     }
   }
   &.play {
-    background: transparent url('../../../../img/play.png') no-repeat center center;
-    background-size: cover;
+    background-image: url('../../../../img/play_button.png');
+    background-color: $transparent;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
     @include vw-calc(width, 30);
     @include vw-calc(height, 30);
   }

@@ -24,7 +24,7 @@
       width: 80%;
     }
     &-title {
-      @include font-sizer(20,26);
+      @include font-sizer(18,24);
     }
     &-item {
       a {
@@ -33,16 +33,14 @@
         &:hover {
           text-decoration: underline;
         }
-        &::before {
-          content: ' ';
-          text-decoration-style: dotted;
-        }
       }
     }
   }
+
   &__copyright {
     @include vw-calc(padding, 20);
   }
+
   &__logo {
     padding-bottom: 10px;
   }

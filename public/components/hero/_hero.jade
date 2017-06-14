@@ -5,8 +5,7 @@
         .hero__content.row(style="background-image: url('#{item.image}')")
             .hero__body.column(class=item.link.type)
                 .title #{item.title}
-                .copy
-                    #{item.copy}
+                .copy #{item.copy}
                 if item.link.type == 'video'
                     a.btn.play(href="#{item.link.path}")
                 else
